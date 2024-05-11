@@ -4,7 +4,7 @@ import {CityCard} from "@/components/cards/City.tsx";
 
 export const CitiesCard = () => {
   return (
-    <Card className='mx-4 sm:mx-20 mt-4 text-cyan-600 w-fit'>
+    <Card className='mx-4 sm:mx-20 mt-4 text-[#5B5F97] w-fit'>
       <CardHeader>
         {/* Ciudad Base */}
         <CardTitle className='flex gap-2 items-center'>
