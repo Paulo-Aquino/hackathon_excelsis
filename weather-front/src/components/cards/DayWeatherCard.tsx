@@ -11,6 +11,7 @@ import {
   ThermometerSun
 } from "lucide-react";
 import {useEffect, useState} from "react";
+import {useTempUnitStore} from "@/store/store.ts";
 
 
 interface Props {
@@ -20,6 +21,12 @@ interface Props {
 export const DayWeatherCard = ({forecast}: Props) => {
   const [dayOfWeek, setDayOfWeek] = useState('');
   const [formattedDate, setFormattedDate] = useState('');
+
+  const {unit} = useTempUnitStore();
+
+  const convertTemp = (temp: number): number => {
+    return unit === 'C' ? temp : (temp * 9 / 5) + 32;
+  }
 
   const weatherIcons = [
     {
@@ -75,18 +82,18 @@ export const DayWeatherCard = ({forecast}: Props) => {
         <div className='flex justify-center items-center text-center gap-4'>
           <div>
             <p>
-              {forecast.main.temp_max}
+              {convertTemp(forecast.main.temp_max)}
               <span className='text-xs font-medium'>
-                °C
+                {unit === 'C' ? '°C' : '°F'}
               </span>
             </p>
             <span className='flex gap-2'> <ThermometerSun className='text-[#FF6B6C]'/>  Max.</span>
           </div>
           <div>
             <p>
-              {forecast.main.temp_min}
+              {convertTemp(forecast.main.temp_min)}
               <span className='text-xs font-medium'>
-                °C
+                {unit === 'C' ? '°C' : '°F'}
               </span>
             </p>
             <span className='flex gap-2'> <ThermometerSnowflake className='text-[#898fe3]'/>  Min.</span>

@@ -7,6 +7,7 @@ interface Props {
 }
 
 export const ForecastCard = ({data}: Props) => {
+
   return (
     <Card className='mx-4 sm:mx-20 mt-4 text-[#5B5F97]'>
       <CardContent className='flex flex-col sm:flex-row'>

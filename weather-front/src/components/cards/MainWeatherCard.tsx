@@ -3,6 +3,7 @@ import {CloudRain, Droplet, HomeIcon, Wind} from "lucide-react";
 import {Badge} from "@/components/ui/badge.tsx";
 import {DepartamentoList} from "@/interface/IWeather.tsx";
 import {useEffect, useState} from "react";
+import {useTempUnitStore} from "@/store/store.ts";
 
 interface Props {
   data: DepartamentoList;
@@ -12,6 +13,8 @@ export const MainWeatherCard = ({data}: Props) => {
 
   const [dayOfWeek, setDayOfWeek] = useState('');
   const [formattedDate, setFormattedDate] = useState('');
+
+  const {unit} = useTempUnitStore();
 
   useEffect(() => {
     if (data.pronostico_extendido_list && data.pronostico_extendido_list.length > 0) {
@@ -32,6 +35,10 @@ export const MainWeatherCard = ({data}: Props) => {
       setFormattedDate(dateWithFormat);
     }
   }, [data]);
+
+  const convertTemp = (temp: number): number => {
+    return unit === 'C' ? temp : (temp * 9 / 5) + 32;
+  };
 
   return (
     <Card className='mx-4 sm:mx-20 mt-4 text-[#5B5F97] w-fit bg-[#FFFFFB]'>
@@ -54,8 +61,8 @@ export const MainWeatherCard = ({data}: Props) => {
       </CardHeader>
       <CardContent className='text-center sm:text-left'>
         <h1 className='text-4xl sm:text-6xl font-bold'>
-          {data.pronostico_extendido_list[0].main.temp}<span
-          className='text-xl sm:text-2xl align-top font-medium'>°C</span>
+          {convertTemp(data.pronostico_extendido_list[0].main.temp)}<span
+          className='text-xl sm:text-2xl align-top font-medium'>{unit === 'C' ? '°C' : '°F'}</span>
         </h1>
         <h2 className='text-2xl sm:text-4xl font-bold'>Estado del tiempo</h2>
         <Badge variant="outline" className='bg-green-300'>ÓPTIMO</Badge>
