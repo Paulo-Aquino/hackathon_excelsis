@@ -1,0 +1,8 @@
+C:\Users\amn19\source\repos\weather_back\obj\Debug\net8.0\weather_back.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amn19\source\repos\weather_back\obj\Debug\net8.0\weather_back.AssemblyInfoInputs.cache
+C:\Users\amn19\source\repos\weather_back\obj\Debug\net8.0\weather_back.AssemblyInfo.cs
+C:\Users\amn19\source\repos\weather_back\obj\Debug\net8.0\weather_back.csproj.CoreCompileInputs.cache
+C:\Users\amn19\source\repos\weather_back\obj\Debug\net8.0\weather_back.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\amn19\source\repos\weather_back\obj\Debug\net8.0\weather_back.RazorAssemblyInfo.cache
+C:\Users\amn19\source\repos\weather_back\obj\Debug\net8.0\weather_back.RazorAssemblyInfo.cs
+C:\Users\amn19\source\repos\weather_back\obj\Debug\net8.0\weather_back.csproj.AssemblyReference.cache

@@ -27,7 +27,7 @@ export const Header = () => {
                 </SelectItem>
               ))}
             </SelectGroup>
-            https://chatgpt.com/?oai-dm=1   </SelectContent>
+          </SelectContent>
         </Select>
       </div>
       <div className='flex flex-1 justify-center items-center'>
